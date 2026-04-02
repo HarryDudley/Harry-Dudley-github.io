@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Dudley| Master's in Chemistry</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #1a0b2e;
+            --sidebar: #2d1b4d;
+            --text: #f8f0ff;
+            --pink: #bd93f9;
+            --purple: #bd93f9;
+            --card-bg: #24143d;
+            --card-border: #3d2563;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background-color: var(--sidebar);
+            width: 320px;
+            height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+            border-right: 2px solid var(--pink);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid var(--pink);
+            object-fit: cover;
+            margin-top: 20px;
+            object-position: center top;
+            box-shadow: 0 0 20px rgba(255, 121, 198, 0.4);
+        }
+
+        .nav-menu {
+            margin-top: 30px;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .nav-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: transparent;
+            border: 1.5px solid var(--purple);
+            color: var(--text);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: var(--bg);
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            flex: 1;
+            padding: 40px;
+            margin-left: 320px; /* Match sidebar width */
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        #home { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-size: 1.8em; margin: 15px 0 5px; }
+        h2 { color: var(--purple); border-bottom: 1px solid var(--purple); padding-bottom: 10px; margin-top: 30px; }
+        h3 { color: var(--pink); margin-top: 25px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--card-border);
+            line-height: 1.6;
+        }
+
+        .interest-tag {
+            display: inline-block;
+            background: var(--sidebar);
+            border: 1px solid var(--pink);
+            color: var(--pink);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .date {
+            color: var(--pink);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.85em;
+        }
+
+        /* Contact Styling */
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .contact-icon { color: var(--pink); width: 20px; text-align: center; font-size: 1.2em; }
+        .contact-text a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
+        .contact-text a:hover { border-bottom: 1px solid var(--pink); }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 2px solid var(--pink);
+            }
+            .main { margin-left: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <img src="Lara 2.JPEG" alt="Lara Kallem" class="profile-img">
+    <h1>Lara Kallem</h1>
+    <p>Master's Student | University of Iowa</p>
+    
+    <nav class="nav-menu">
+        <button onclick="showSection('home')" class="nav-btn">Home</button>
+        <button onclick="showSection('research')" class="nav-btn">Research & Experience</button>
+        <button onclick="showSection('teaching')" class="nav-btn">Teaching</button>
+        <button onclick="showSection('leadership')" class="nav-btn">Leadership & Activities</button>
+        <button onclick="showSection('contact')" class="nav-btn">Contact</button>
+    </nav>
+
+    <hr style="border: 0; border-top: 1px solid var(--purple); margin: 25px 0;">
+    <p style="font-size: 0.85em;">Mathematics Department</p>
+</div>
+
+<div class="main">
+    <section id="home">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>I recieved my Master's Degree in Chemistry from the University of Iowa.</p>
+            <p>I studied organic film development on surfaces from chemical offgassing in crumb rubber under Scott K. Shaw and David M. Cwiertny.</p>
+            <p>I am an Adjunct Professor of Chemistry at Simpson College, teaching General Chemistry Fall 2026.</p>
+        </div>
+        
+        <h3>My Interests</h3>
+        <div style="display: flex; flex-wrap: wrap;">
+            <span class="interest-tag">Teaching</span>
+            <span class="interest-tag">Quality Control/Quality Assurance</span>
+            <span class="interest-tag">Liquid Chromatography Mass Spectrometry</span>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Research & Experience</h2>
+        
+        <div class="card">
+            <span class="date">Jun 2021 - Aug 2021</span>
+            <strong>Student Undergraduate Laboratory Internship</strong><br>
+            Ames National Laboratory | Ames, IA
+            <p>Developed literature review on the optimal catalyt for the hydrogenolysis of alkanes  .</p>
+        </div>
+
+        <div class="card">
+            <span class="date">Oct 2019 - April 2022</span>
+            <strong>Independent Research in Chemistry </strong><br>
+            Simpson College | Indianola, IA
+            <p>Designed an experiment to analyze microplastic pollution in local freshwater environments, including lakes, rivers and streams.</p>
+        </div>
+
+        <div class="card">
+            <span class="date">Aug 2022 - Dec 2024</span>
+            <strong>Graduate Researcher | University of Iowa Department of Chemistry </strong><br>
+            Iowa City, IA
+            <p>Utilized separation and identification techniques to locate the presence of harmful chemicals in crumb rubber.</p>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching at the University of Iowa</h2>
+
+        <div class="card">
+            <span class="date">Spring 2023/2024</span>
+            <strong>Teaching Assistant</strong><br>
+            Principles of Chemistry II
+        </div>
+
+        <div class="card">
+            <span class="date">Fall 2022/2023</span>
+            <strong>Teaching Assistant</strong><br>
+            Principles of Chemsitry I
+        </div>
+    </section>
+
+<section id="leadership">
+    <h2>Leadership & Activities</h2
+                                 
+    <h3>Simpson College</h3>
+    <div class="card">
+        <strong>Cross Country and Track & Field Team</strong><br>
+        <span class="date">Aug 2017 - May 2022</span>
+        <p>Student athlete for Simpson College while maintaining undergraduate coursework.</p>
+    </div>
+
+</section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+            <div class="contact-row">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-text">
+                    <a href="mailto:vetdude13@gmail.com">vetdude13@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="contact-text">
+                    <a href="https://github.com/larakallem" target="_blank">github.com/harrydudley</a>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections with a clean reset
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show the target section
+        const activeSection = document.getElementById(sectionId);
+        if (activeSection) {
+            activeSection.style.display = 'block';
+            
+            // Re-trigger the animation manually by resetting it
+            activeSection.style.animation = 'none';
+            activeSection.offsetHeight; // trigger reflow
+            activeSection.style.animation = 'fadeIn 0.6s ease-out forwards';
+        }
+        
+        // Scroll back to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
